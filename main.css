@@ -1,11 +1,19 @@
+body.dark-theme img {
+    filter: brightness(.8) contrast(1.2);
+  }
+
 body {
-    margin: auto;
+    margin: 0;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.879);
+    background-color: rgba(0, 33, 71, 0.879);
+}
+
+p {
+    margin: 0;
 }
 
 #device_title {
-    font-family: 'Quicksand', serif;
+    font-family: 'Source Code Pro', serif;
     text-align: center;
     color: white;
     margin-left: 5px;
@@ -15,14 +23,38 @@ body {
 
 #screen {
     border: 2px solid black;
-    padding: 30px 0 0 30px;
     margin: 0 10px 10px 10px;
     background-color: rgb(215, 215, 215);
 }
 
+#display {
+    text-align: end;
+    margin: 10px 0 10px 0;
+    font-size: 30px;
+}
+
+p #cursor {
+        height: 20px;
+        width: 4px;
+        margin-right: 3px;
+        background: black;
+        opacity: 0;
+        display: inline-block;
+        animation: blink 1s linear infinite alternate;
+      }
+      
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
 #device_frame {
     width: 300px;
-    height: 420px;
+    height: 450px;
     margin: auto;
     margin-top: 5%;
     margin-bottom: 5%;
