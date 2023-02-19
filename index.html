@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Code Pro">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
     <link rel="stylesheet" href="main.css">
     <title>Calculatrice</title>
 </head>
@@ -15,34 +15,34 @@
     </div>
     <div id="screen">
         <div id="display">
-        <p><span id="cursor"></span></p> 
+        <p><span id="cursor"></span>
         </div>
     </div>
     <div class="device_buttons">
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_misc" type="button" data-action="left_bracket">
             (
         </button>
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_misc" type="button" data-action="right_bracket">
             )
         </button>
-        <button class ="buttons_del" type="button">
+        <button class ="buttons_del" type="button" data-action="clear_everything">
             CE
         </button>
-        <button class ="buttons_del" type="button">
+        <button class ="buttons_del" type="button" data-action="clear">
             C
         </button>
     </div>
     <div class="device_buttons">
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_misc" type="button" data-action="frac">
             1/x
         </button>
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_misc" type="button" data-action="sqr">
             x²
         </button>
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_misc" type="button" data-action="sqr_root">
             √x
         </button>
-        <button class ="buttons_operations" type="button">
+        <button class ="buttons_operations" type="button" data-action="divide">
             &divide;
         </button>
     </div>
@@ -56,7 +56,7 @@
         <button class ="buttons_misc" type="button">
             9
         </button>
-        <button class ="buttons_operations" type="button">
+        <button class ="buttons_operations" type="button" data-action="multiply">
             &times;
         </button>
     </div>
@@ -70,7 +70,7 @@
         <button class ="buttons_misc" type="button">
             6
         </button>
-        <button class ="buttons_operations" type="button">
+        <button class ="buttons_operations" type="button" data-action="substract">
             -
         </button>
     </div>
@@ -84,24 +84,25 @@
         <button class ="buttons_misc" type="button">
             3
         </button>
-        <button class ="buttons_operations" type="button">
+        <button class ="buttons_operations" type="button" data-action="add">
             &plus;
         </button>
     </div>
     <div class="device_buttons">
-        <button class ="buttons_operations" type="button">
+        <button class ="buttons_operations" type="button" data-action="change_sign">
             -/+
         </button>
         <button class ="buttons_misc" type="button">
             0
         </button>
-        <button class ="buttons_operations" type="button">
+        <button class ="buttons_operations" type="button" data-action="float">
             ,
         </button>
-        <button class ="button_equal" type="button">
+        <button class ="button_equal" type="button" data-action="equals">
             &equals;
         </button>
     </div>
 </div>
+<script src="main.js"></script>
 </body>
 </html>

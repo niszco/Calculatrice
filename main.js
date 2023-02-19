@@ -1,17 +1,19 @@
-// Main functions for basic operations.
+const device = document.querySelector('.device_frame');
+const buttons = document.querySelector('.device_buttons');
 
-function addition(a, b){
-  return a + b;
-}
+buttons.addEventListener('click', x => {
+  if (x.target.matches('device_buttons')) {
+    const buttons = x.target;
+    const action = buttons.dataset.action;
+    const buttonsContent = buttons.textContent;
+    const displayNumber = display.textContent
+  }
+})
 
-function multiply(a, b) {
-  return a * b;
-}
-
-function substract(a, b) {
-  return a - b;
-}
-
-function divide(a, b) {
-  return a / b;
+function display(value) {
+  if (value == null) {
+    equals.value += '';
+  } else {
+    equals.value = value;
+  }
 }
