@@ -29,13 +29,14 @@ p {
     text-align: end;
     margin: 10px 0 10px 0;
     font-size: 30px;
+    color: rgba(0, 0, 0, 0.4);
 }
 
-p #cursor {
+#cursor {
     height: 20px;
     width: 10px;
     margin-right: 3px;
-    background: rgb(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     opacity: 0;
     display: inline-block;
     animation: blink 0.75s linear infinite alternate;

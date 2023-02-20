@@ -1,6 +1,3 @@
-"use strict";
-
-const input = document.getElementById('display_screen');
 const number = document.querySelectorAll('.buttons_num');
 const operations = document.querySelectorAll('.buttons_operations');
 const result = document.getElementById('equals');
@@ -20,8 +17,23 @@ function displayScreenOthers(value) {
   display.innerHTML += value;
 }
 
-function clearDisplay(value) {
+function clearDisplay() {
+  display.innerHTML = "";
+}
+
+function clearOneNumber() {
+  screenBuffer.pop()
   display.innerHTML = value;
+}
+
+function frac(value) {
+  screenBuffer.unshift(value);
+  display.innerHTML += value;
+}
+
+function percent(value) {
+  value = screenBuffer[screenBuffer.length - 1] * (screenBuffer[screenBuffer.length - 1] * 100);
+  display.innerHTML += value;
 }
 
 function displayNumbers(number) {
