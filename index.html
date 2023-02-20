@@ -15,87 +15,87 @@
     </div>
     <div id="screen">
         <div id="display">
-        <p id="display_numbers"><span id="cursor"></span></p>
+        <p id="display_device"><span id="cursor"></span></p>
         </div>
     </div>
     <div class="device_buttons">
-        <button class ="buttons_misc" type="button" id="left_bracket">
-            (
+        <button class ="buttons_operations" type="button" id="percent">
+            %
         </button>
-        <button class ="buttons_misc" type="button" id="right_bracket">
-            )
-        </button>
-        <button class ="buttons_del" type="button" id="clear_everything">
+        <button class ="buttons_del" type="button" id="clear_everything" onclick="clearDisplay('', cursor)">
             CE
         </button>
         <button class ="buttons_del" type="button" id="clear">
             C
         </button>
+        <button class ="buttons_del" type="button" id="clear_one">
+            ←
+        </button>
     </div>
     <div class="device_buttons">
-        <button class ="buttons_misc" type="button" id="frac">
+        <button class ="buttons_operations" type="button" id="frac" onclick="displayScreenCommon('1/')">
             1/x
         </button>
-        <button class ="buttons_misc" type="button" id="sqr">
+        <button class ="buttons_operations" type="button" id="sqr" onclick="displayScreenCommon('**')">
             x²
         </button>
-        <button class ="buttons_misc" type="button" id="sqr_root">
+        <button class ="buttons_operations" type="button" id="sqr_root" onclick="displayScreenCommon('√')">
             √x
         </button>
-        <button class ="buttons_operations" type="button" id="divide">
+        <button class ="buttons_operations" type="button" id="divide" onclick="displayScreenCommon('/')">
             &divide;
         </button>
     </div>
     <div class="device_buttons">
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_num" type="button" onclick="displayScreenCommon(7)">
             7
         </button>
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_num" type="button" onclick="displayScreenCommon(8)">
             8
         </button>
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_num" type="button" onclick="displayScreenCommon(9)">
             9
         </button>
-        <button class ="buttons_operations" type="button" id="multiply">
+        <button class ="buttons_operations" type="button" id="multiply" onclick="displayScreenCommon('*')">
             &times;
         </button>
     </div>
     <div class="device_buttons">
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_num" type="button" onclick="displayScreenCommon(4)">
             4
         </button>
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_num" type="button" onclick="displayScreenCommon(5)">
             5
         </button>
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_num" type="button" onclick="displayScreenCommon(6)">
             6
         </button>
-        <button class ="buttons_operations" type="button" id="substract">
+        <button class ="buttons_operations" type="button" id="substract" onclick="displayScreenCommon('-')">
             -
         </button>
     </div>
     <div class="device_buttons">
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_num" type="button" onclick="displayScreenCommon(1)">
             1
         </button>
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_num" type="button" onclick="displayScreenCommon(2)">
             2
         </button>
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_num" type="button" onclick="displayScreenCommon(3)">
             3
         </button>
-        <button class ="buttons_operations" type="button" id="add">
+        <button class ="buttons_operations" type="button" id="add" onclick="displayScreenCommon('+')">
             &plus;
         </button>
     </div>
     <div class="device_buttons">
-        <button class ="buttons_operations" type="button" id="change_sign">
+        <button class ="buttons_operations" type="button" id="change_sign" onclick="displayScreenOthers('-')">
             -/+
         </button>
-        <button class ="buttons_misc" type="button">
+        <button class ="buttons_num" type="button" onclick="displayScreenCommon(0)">
             0
         </button>
-        <button class ="buttons_operations" type="button" id="float">
+        <button class ="buttons_operations" type="button" id="float" onclick="displayScreenCommon(',')">
             ,
         </button>
         <button class ="button_equal" type="button" id="equals">
@@ -103,6 +103,6 @@
         </button>
     </div>
 </div>
-<script type="module" src="main.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
