@@ -18,7 +18,7 @@ function displayScreenOthers(value) {
 }
 
 function clearDisplay() {
-  display.innerHTML = "";
+  display.innerHTML = '';
 }
 
 function clearOneNumber() {
@@ -34,6 +34,14 @@ function frac(value) {
 function percent(value) {
   value = screenBuffer[screenBuffer.length - 1] * (screenBuffer[screenBuffer.length - 1] * 100);
   display.innerHTML += value;
+}
+
+function equals(value1, value2) {
+
+}
+
+function calcSqr(value) {
+  return value ** value;
 }
 
 function displayNumbers(number) {

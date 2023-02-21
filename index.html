@@ -15,10 +15,7 @@
     </div>
     <div id="screen">
         <div id="display">
-        <p id="display_device"></p>
-        <div>
-            <p><span id="cursor"></span></p>
-        </div>
+        <p id="display_device"><span id="cursor"></span></p>
         </div>
     </div>
     <div class="device_buttons">
@@ -39,13 +36,13 @@
         <button class ="buttons_operations" type="button" id="frac" onclick="frac('1/')">
             1/x
         </button>
-        <button class ="buttons_operations" type="button" id="sqr" onclick="displayScreenCommon('**')">
+        <button class ="buttons_operations" type="button" id="sqr" onclick="calcSqr('display.innerHTML')">
             x²
         </button>
         <button class ="buttons_operations" type="button" id="sqr_root" onclick="displayScreenCommon('√')">
             √x
         </button>
-        <button class ="buttons_operations" type="button" id="divide" onclick="displayScreenCommon('/')">
+        <button class ="buttons_operations" type="button" id="divide" onclick="displayScreenCommon('÷')">
             &divide;
         </button>
     </div>
