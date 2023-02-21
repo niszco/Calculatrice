@@ -3,8 +3,10 @@ const operations = document.querySelectorAll('.buttons_operations');
 const result = document.getElementById('equals');
 const display = document.getElementById('display_device')
 const cursor = document.getElementById('cursor');
-let resultDisplayed = false;
+const currentValue = display.innerHTML;
+const lastValue = screenBuffer[screenBuffer.length - 1];
 
+let resultDisplayed = false;
 let screenBuffer = [];
 
 function displayScreenCommon(value) {
@@ -22,9 +24,17 @@ function clearDisplay() {
 }
 
 function clearOneNumber() {
-  screenBuffer.pop()
+  for (let i = 0; i < screenBuffer.length; i++) {
+    if (i === screenBuffer[0]) {
+      return display.innerHTML = '';
+    }
+   else if (i !== screenBuffer[0]) {
+  screenBuffer.pop(value)
   display.innerHTML = value;
+    }
+  }
 }
+
 
 function frac(value) {
   screenBuffer.unshift(value);
@@ -36,31 +46,12 @@ function percent(value) {
   display.innerHTML += value;
 }
 
-function equals(value1, value2) {
-
+function equals(lastValue, currentValue) {
+  
 }
 
 function calcSqr(value) {
-  return value ** value;
+  return Math.sqrt(value);
 }
 
-function displayNumbers(number) {
-  for (let i = 0; i < number.length; i++) {
-    number[i].addEventListener("click", function(x) {
-      let currentString = input.innerHTML;
-      let lastChar = currentString[currentString.length - 1];
 
-      if (resultDisplayed === false) {
-        input.innerHTML += x.target.innerHTML;
-      } else if (resultDisplayed === true && lastChar == '&plus' || lastChar == '&times' || lastChar == '&divide' || lastChar == '-') {
-        resultDisplayed = false;
-        input.innerHTML	+= x.target.innerHTML;
-      } else {
-        resultDisplayed = false;
-        input.innerHTML = "";
-        input.innerHTML += x.target.innerHTML;
-      }
-    });
-
-  }
-}
