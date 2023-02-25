@@ -51,23 +51,18 @@ function updateDisplay(value) {
   display.innerHTML = value;
 }
 
-// Check if the number is a decimal;
-function decimalBoolean() {
-  if (!display.innerHTML.includes(',')) {
-    display.innerHTML += decimal;
-  }
-}
-
 // Evénement qui calcule le résultat et tri les opérateurs et les nombres;
 result.addEventListener('click', function() {
   let inputString = display.innerHTML;
   // Sous-tableaux qui sépare les nombres des opérateurs et invérsement;
   let numbers = inputString.split(/\+|\-|\^|\√|\*|\÷/g);
-  let operators = inputString.replace(/[0-9]|\,/g,"").split("");
+  let operators = inputString.replace(/[0-9]|\./g,"").split("");
   
+  console.log(screenBuffer)
   console.log(inputString);
   console.log(operators);
   console.log(numbers);
+
 
 for (let i = 0; i < numbers.length; i++) {
 // Chaque opérateur est testé, selon l'opérateur, le calcul sera effectué
@@ -94,6 +89,10 @@ for (let i = 0; i < numbers.length; i++) {
     else if (operators[i] === "√") {
       resultDisplayed = true;
       return updateDisplay(Math.sqrt(numbers[i]));
+    }
+    else if (screenBuffer[0] === '-' && screenBuffer[i + 1] === number) {
+      resultDisplayed = true;
+      return numbers[i + 1] *= Math.sign(numbers[i + 1]);
     }
   }
 })
