@@ -15,9 +15,7 @@ let resultDisplayed = false;
 // Un tableau pour stocker toutes les valeurs; 
 let screenBuffer = [];
 
-// Valeure actuellement affiché par la calculatrice;
-const currentValue = display.innerHTML;
-// Dernière valeure du buffer;
+// Dernière valeur du buffer;
 const lastString = screenBuffer[screenBuffer.length - 1];
 
 // Joue un son quand l'utilisateur presse une touche;
@@ -31,13 +29,12 @@ buttons.forEach(button => {
 
 // Affiche les nombres et les opérateurs;
 function displayScreenCommon(value) {
-  screenBuffer.push(value);
-  display.innerHTML += value;
-}
+  if (lastString === "+" || lastString === "-" || lastString === "*" || lastString === "÷") {
+    operations.addEventListener('click', () => {
 
-// Affiche les autres valeurs spécifiques au début de l'écran de la calculatrice;
-function displayScreenOthers(value) {
-  screenBuffer.unshift(value);
+    })
+  }
+  screenBuffer.push(value);
   display.innerHTML += value;
 }
 
@@ -55,10 +52,10 @@ function updateDisplay(value) {
 result.addEventListener('click', function() {
   let inputString = display.innerHTML;
   // Sous-tableaux qui sépare les nombres des opérateurs et invérsement;
-  let numbers = inputString.split(/\+|\-|\^|\√|\*|\÷/g);
+  let numbers = inputString.split(/\+|\-|\^|\√|\*|\÷|\%/g);
   let operators = inputString.replace(/[0-9]|\./g,"").split("");
   
-  console.log(screenBuffer)
+  console.log(screenBuffer);
   console.log(inputString);
   console.log(operators);
   console.log(numbers);
@@ -90,9 +87,9 @@ for (let i = 0; i < numbers.length; i++) {
       resultDisplayed = true;
       return updateDisplay(Math.sqrt(numbers[i]));
     }
-    else if (screenBuffer[0] === '-' && screenBuffer[i + 1] === number) {
+    else if (operators[i] === "%") {
       resultDisplayed = true;
-      return numbers[i + 1] *= Math.sign(numbers[i + 1]);
+      return updateDisplay(numbers[i] / 100);
     }
   }
 })
